@@ -1,3 +1,6 @@
+// 編號：CANDY-007
+// 程式語言：JavaScript
+// 題目：在某個數字陣列裡，可能藏有某個不合群的奇數或偶數，試著找出它！
 
 function findSomeDifferent(numbers) {
   // 只有奇數的陣列
