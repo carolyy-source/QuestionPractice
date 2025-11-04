@@ -13,9 +13,8 @@ function removeAnchor(url) {
   //     const target = singleWord.slice(0, i).join("");
   //     return target;
   //   }
-  // }
   // return url;
-    //將網址以錨點分為前後
+    //v2 將網址以錨點分為前後
   return url.split("#")[0];
 }
 
