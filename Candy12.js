@@ -5,20 +5,20 @@
 //      1450 => 1 + 4 + 5 + 0 => 10 => 1 + 0 => 1
 
 const numberReducer = (num) => {
-  // 將數字轉完字串
-  const string = num.toString();
-  console.log(string);
-  //將字串拆成單一數字的陣列後，先作加總
-  const number = string.split("");
-  for (let i = 0; i < number.length; i++) {
-    const total = 0;
-    total = +number[i];
-    for (let j = 0; j < total.length; j++) {
-      const sum = 0;
-      sum = +total[i];
-    }
+  // 將數字轉完陣列
+  const digits = num.toString().split(""); // ["9","5","2","7"]
+  //再將陣列轉為“單一數字”保存
+  const number = digits.map(d => Number(d));// [9,5,2,7]
+  //用reduce做累加
+  const result = number.reduce(function (x, y) {
+  return x + y;
+  }, 0);
+  //總合還不是個位數，就繼續執行
+  if(result>9){
+    return numberReducer(result);
   }
-};
+  return result;
+ };
 
 console.log(numberReducer(9527)); // 印出 5
 console.log(numberReducer(1450)); // 印出 1

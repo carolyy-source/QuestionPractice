@@ -5,7 +5,24 @@
 //      [5, 5, 8, 8, 8, 4, 4]，`8` 出現了 3  次
 
 function findOddElm(numbers) {
-  // 實作寫在這裡
+  //記錄每個數字出現幾次
+  const count = {};
+  numbers.forEach((num) => {
+    if(count[num]){
+     count[num]++;
+    }
+    else {
+    // 如果是第一次出現，就設成 1
+    count[num] = 1;
+    }
+  });
+    //找出次數是奇數的數字
+    for (let num in count) {
+    if (count[num] % 2 !== 0) {
+      //將字串轉回數字
+      return Number(num); 
+    }
+  }
 }
 
 console.log(findOddElm([1, 1, 2])); // 印出 2

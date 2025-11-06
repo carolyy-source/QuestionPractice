@@ -4,9 +4,18 @@
 // 範例：9527 變成 "1000 x 9 + 100 x 5 + 10 x 2 + 7"
 
 function expandedForm(num) {
-  // 確認數字的長度
-  const digits = num.toString().length; //148->3位數
-  for (let i = digits; (i = 0); i--) {}
+  // 將數字轉為陣列
+  const digits = num.toString().split(""); //148->3位數
+  const result = [];
+  for (let i = 0; i < digits.length; i++) {
+    //確認10進位的位數
+    const leading = 10**(digits.length-i-1) ;
+    if (digits[i] !== '0'){
+      result.push(`${leading} x ${digits[i]}`);
+    }
+  }
+  return result.join(" + ");
+
 }
 
 console.log(expandedForm(8)); // 印出 8
