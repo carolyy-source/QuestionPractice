@@ -6,7 +6,14 @@
 //      "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 
 function splitString(str) {
-  // 實作寫在這裡
+  const result = [];
+  // 每隔2字元執行一次
+  for (let i = 0; i < str.length; i += 2) {
+    let mix = str[0] + (str[i] || "_");
+    result.push(mix);
+  }
+  //若字串空白不會進入迴圈，直接回傳空陣列
+  return result;
 }
 
 console.log(splitString("abcdef")); // ["ab", "cd", "ef"]
