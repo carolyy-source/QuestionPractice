@@ -5,14 +5,14 @@
 function humanReadableTimer(seconds) {
   //先取出小時，剩餘的轉成時間.分鐘
   const hour = Math.floor(seconds / 3600);
-  const remaining = seconds%3600;
-  const minute=Math.floor(remaining / 60);
-  const second= remaining%60;
-  
-  // 轉成兩位數字串
-  const hh = String(hour).padStart(2, '0');
-  const mm = String(minute).padStart(2, '0');
-  const ss = String(second).padStart(2, '0');
+  const remaining = seconds % 3600;
+  const minute = Math.floor(remaining / 60);
+  const second = remaining % 60;
+
+  // 轉成兩位數字串，不足的補0
+  const hh = String(hour).padStart(2, "0");
+  const mm = String(minute).padStart(2, "0");
+  const ss = String(second).padStart(2, "0");
 
   return `${hh}:${mm}:${ss}`;
 }
