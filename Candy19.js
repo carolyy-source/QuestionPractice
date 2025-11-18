@@ -5,7 +5,7 @@
 function isSquare(num) {
   // 先排除負數
   if (num < 0) return false;
-  /*
+  /*法1
   for (let i = 0; i <= num; i++) {
     if (num === i * i) {
       return true;
@@ -13,7 +13,8 @@ function isSquare(num) {
   }
   return false;
   */
-  //直接判斷平方根是否為整數
+
+  //法2 直接判斷平方根是否為整數
   return Number.isInteger(Math.sqrt(num));
 }
 
