@@ -6,10 +6,17 @@ class Queue {
   constructor() {
     this.items = [];
   }
-  enqueue() {}
-  dequeue() {}
+  enqueue(value) {
+    // 如果沒有給參數，直接忽略
+    if (value === undefined) return;
+    this.items.push(value);
+  }
+  dequeue() {
+    //從前面取出元素
+    return this.items.shift();
+  }
 
-  get size() {
+  get length() {
     return this.items.length;
   }
 }
